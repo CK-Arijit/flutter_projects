@@ -16,7 +16,9 @@ class _DiceRollerState extends State<DiceRoller> {
     setState(() {
       final randomizer =
           Random().nextInt(6) + 1; // Simulate rolling a dice (1-6)
-      currentDiceNumber = randomizer;
+      currentDiceNumber = currentDiceNumber == randomizer
+          ? (randomizer % 6) + 1
+          : randomizer;
     });
   }
 
