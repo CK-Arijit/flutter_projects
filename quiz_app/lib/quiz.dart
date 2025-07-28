@@ -34,7 +34,6 @@ class _QuizState extends State<Quiz> {
     if (selectedAnswers.length == questions.length) {
       // If all questions have been answered, reset the quiz
       setState(() {
-        selectedAnswers.clear();
         activeScreen = 'results-screen'; // Reset to start screen
       });
     }
@@ -55,7 +54,10 @@ class _QuizState extends State<Quiz> {
         ? QuestionsScreen(
             onSelectAnswer: chooseAnswer,
           )
-        : ResultsScreen(restartQuiz: restartQuiz);
+        : ResultsScreen(
+            restartQuiz: restartQuiz,
+            selectedAnswers: selectedAnswers,
+          );
     return MaterialApp(
       home: Scaffold(
         body: Container(
