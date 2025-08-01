@@ -16,6 +16,7 @@ class ExpensesList extends StatelessWidget {
           title: Text(expense.title),
           subtitle: Text('${expense.amount} - ${expense.date.toLocal()}'),
           trailing: Text(expense.category.name),
+          tileColor: Color.fromARGB(255, 18, 156, 202),
         );
       },
     );
