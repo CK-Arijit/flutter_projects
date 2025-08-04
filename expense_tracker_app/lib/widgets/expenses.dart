@@ -27,6 +27,20 @@ class _ExpensesState extends State<Expenses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Your Expenses'),
+        backgroundColor: const Color.fromARGB(255, 18, 156, 202),
+        foregroundColor: Colors.white,
+        centerTitle: false,
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Add functionality to add a new expense
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           const Text('The chart will go here'),
